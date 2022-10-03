@@ -1,1 +1,16 @@
-<p>product works!</p>
+<div class="content" role="main">
+    <p class="display-6">Product list</p>
+    <ol>
+        <li *ngFor="let products of product">
+            <div class="product-card">
+                <img src="{{products.image}}" alt="..." class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{products.name}}</h5>
+                    <h5 class="card-title">{{products.price}}<span> €</span></h5>
+                    <p class="card-text"><span>Description:</span><br>{{products.description}}.</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>

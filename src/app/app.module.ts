@@ -21,6 +21,7 @@ import { ProductComponent } from './product/product.component';
     FormsModule,
     RouterModule.forRoot([
       {path: 'ticket', component: TicketComponent},
+      {path: 'product', component: ProductComponent},
       {path: 'home', component: HomeComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
     ]),
