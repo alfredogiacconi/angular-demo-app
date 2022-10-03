@@ -1,41 +1,33 @@
 <div class="content" role="main">
-    <p class="display-6">Ticket list</p>
-    <ol class="tickets list-group list-group-numbered">
-        <li *ngFor="let tickets of ticket" class="list-group-item">
-          <button type="button" (click)="onSelect(tickets)" class="btn btn-link">
-            <span class="first">{{tickets.first}}</span>
-          </button>
-        </li>
-      </ol>
-      <!-- <div *ngIf="selectedTicket"> -->
-        <!-- <h2>{{selectedTicket.first | uppercase}} Details</h2> -->
-        <!-- <div>id: {{selectedTicket.id}}</div> -->
-        <!-- <div>
-          <label for="ticket-first">First: </label>
-          <input id="ticket-first" [(ngModel)]="selectedTicket.first" placeholder="first name">
-        </div> -->
-      <!-- </div> -->
-    <div *ngIf="selectedTicket">
-        <p class="display-6">{{selectedTicket.first | uppercase}} Details</p>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#id</th>
-                    <th scope="col"><label for="first">First</label></th>
-                    <th scope="col"><label for="last">Last</label></th>
-                    <th scope="col"><label for="email">Email</label></th>
-                    <th scope="col">Message</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">{{selectedTicket.id}}</th>
-                    <td><input id="first" [(ngModel)]="selectedTicket.first" placeholder="first name"></td>
-                    <td><input id="last" [(ngModel)]="selectedTicket.last" placeholder="last name"></td>
-                    <td><input id="email" [(ngModel)]="selectedTicket.email" placeholder="email"></td>
-                    <td>{{selectedTicket.message}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <p class="display-6">Ticket list</p>
+  <ol class="tickets list-group">
+    <li *ngFor="let tickets of ticket">
+      <button [class.selected]="tickets === selectedTicket" type="button" (click)="onSelect(tickets)" class="btn btn-link">
+        <span class="first">{{tickets.first}}</span>
+      </button>
+    </li>
+  </ol>
+  <div *ngIf="selectedTicket">
+    <p class="display-6">{{selectedTicket.first | uppercase}} Details</p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#id</th>
+          <th scope="col"><label for="first">First</label></th>
+          <th scope="col"><label for="last">Last</label></th>
+          <th scope="col"><label for="email">Email</label></th>
+          <th scope="col">Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{selectedTicket.id}}</th>
+          <td><input id="first" [(ngModel)]="selectedTicket.first" placeholder="first name"></td>
+          <td><input id="last" [(ngModel)]="selectedTicket.last" placeholder="last name"></td>
+          <td><input id="email" [(ngModel)]="selectedTicket.email" placeholder="email"></td>
+          <td>{{selectedTicket.message}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from '../ticket';
-import { TICKETS } from '../list-tickets';
+import { Ticket } from '../model/ticket/ticket';
+import { TICKETS } from '../model/ticket/list-tickets';
 
 @Component({
   selector: 'app-ticket',
@@ -8,14 +8,6 @@ import { TICKETS } from '../list-tickets';
   styleUrls: ['./ticket.component.css']
 })
 export class TicketComponent implements OnInit {
-
-  // ticket: Ticket = {
-  //   id: 1,
-  //   first: 'Mark',
-  //   last: 'Otto',
-  //   email: 'mark.otto@email.com',
-  //   message: '@mdo'
-  // };
 
   ticket = TICKETS;
 
